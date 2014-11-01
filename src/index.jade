@@ -9,63 +9,81 @@ html
 
 	body
 
-		article
+		article.language-clike
 
 			section
 				h1 RobotC basics
+				h2 Written and presented by AJ, Halloween 2014
 
 			section
-				h2 Keyboard Interaction
-				h3 Powered by <a href="https://github.com/markdalgleish/bespoke-keys">bespoke-keys</a>
+				h1 Programming fundamentals
 
 			section
-				h2 Touch Interaction
-				h3 Powered by <a href="https://github.com/markdalgleish/bespoke-touch">bespoke-touch</a>
+				h2.bullet Basic program structure
+				h3.bullet RobotC programs are basically a sequence of statements that the computer (NXT) will run.
+				h3.bullet The next statement doesn't start until the previous statement finishes, unless you explicitly say otherwise.
+				h3.bullet There are two types of statements: command statements, and flow control statements
 
 			section
-				h2 Responsive Slides
-				h3 Powered by <a href="https://github.com/markdalgleish/bespoke-scale">bespoke-scale</a>
+				h2.bullet Command statements
+				h3.bullet Command statements are basically <em>actions</em>. They <em>do</em> something, like initializing a variable or moving a motor.
+				h3.bullet Command statements are terminated by <code>;</code>s.
 
 			section
-				h2 Bullet List
-				h3.bullet Powered by <a href="https://github.com/markdalgleish/bespoke-bullets">bespoke-bullets</a>
-				ul
-					li Bullet 1
-					li Bullet 2
-					li Bullet 3
+				h2.bullet Control flow statements
+				h3.bullet Control flow statements control the <em>flow</em> of the program (semi-obviously).
+				h3.bullet For example, the <code>if</code> statement controls whether or not a collection of statements run, based on a condition.
+				h3.bullet Let's just look at an example.
 
 			section
-				h2 Syntax Highlighting
-				h3 Powered by <a href="http://twitter.com/LeaVerou">Lea Verou</a>'s <a href="https://github.com/LeaVerou/prism">Prism</a>
 				pre
-					code.language-javascript.
-						bespoke.from('article', [
-							classes(),
-							keys(),
-							touch(),
-							bullets('li, .bullet')
-						]);
-
-			section(data-bespoke-hash='named-route')
-				h2 Named Route
-				h3 Powered by <a href="https://github.com/markdalgleish/bespoke-hash">bespoke-hash</a>
-				p Look up! This route has been named with a <em>'data-bespoke-hash'</em> attribute.
-
-			section.emphatic-text(data-bespoke-backdrop='emphatic')
-				h2 Emphatic Slide!
-				h3 Powered by <a href="https://github.com/markdalgleish/bespoke-backdrop">bespoke-backdrop</a>
+					code.
+						bool continue = true;
+						
+						while (continue)
+						{
+							// this is a contrived example. usually you would just put `someVariable <= 5` in the while loop.
+							if (someVariable <= 5)
+							{
+								continue = false;
+							}
+						}
 
 			section
-				h2.bullet Just the beginning...
-				br
-				ul
-					li Edit <a href="http://jade-lang.com/">Jade</a> markup in <em>'src/index.jade'</em>
-					li Edit <a href="http://learnboost.github.io/stylus/">Stylus</a> styles in <em>'src/styles/main.styl'</em>
-					li Edit JavaScript in <em>'src/scripts/main.js'</em>
-				br
-				ul
-					li
-						strong Enjoy! :)
-						a(href='http://twitter.com/markdalgleish')	-@markdalgleish
+				h2.bullet Common control flow statements
+				h3.bullet <code>if (condition) {}</code>
+				h3.bullet <code>while (condition) {}</code>
+				h3.bullet <code>for (initialCommand; condition; endCommand) {}</code>
+
+			section
+				h1 Ancillary concepts
+
+			section
+				h2.bullet Application code
+				h3.bullet This is a fancy term for situation-specific code.
+				h3.bullet Application code is code that contains the logic specific to whatever problem you're trying to solve.
+				h3.bullet For example, a robot's teliop, or a particular autonomous routine.
+
+			section
+				h2.bullet Libraries
+				h3.bullet A library is a unit of code that's designed to be reused.
+				h3.bullet Libraries cannot be compiled on their own, instead, application programs use them
+				h3.bullet Libraries are good because they reduce code duplication, which means less work for everyone
+
+			section
+				h2.bullet APIs
+				h3.bullet An API, or Application Programming Interface, is a collection of command statements that works with a certain topic
+				h3.bullet For example: "the motors API"
+				h3.bullet If you want to seriously program with RobotC you will want to use the <a href="https://github.com/saasrobotics/Libraries">APIs that we have written</a>
+				h3.bullet If you just want to move a prototype's motors, you'll want to use the RobotC APIs. See <a href="http://www.robotc.net/wiki/NXT_Motors_and_Servos_Overview">motors and servos</a> on the RobotC wiki
+
+			section
+				h2.bullet Things I haven't covered
+				h3.bullet Functions
+				h3.bullet Variable types
+				h3.bullet Conditionals
+				h3.bullet <code>#includes</code>
+				h3.bullet <code>switch</code> statements
+				h3.bullet I don't want to take up too much time with these, but if they interest you, talk to me! I'll teach you about them.
 
 		script(src='build/build.js')
