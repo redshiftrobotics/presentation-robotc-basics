@@ -26,3 +26,8 @@ node_modules
 
 # Users Environment Variables
 .lock-wscript
+
+# https://github.com/markdalgleish/generator-bespoke/blob/master/app/templates/_gitignore
+bower_components
+dist
+bespoke-theme-*
