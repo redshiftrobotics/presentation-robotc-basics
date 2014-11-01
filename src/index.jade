@@ -13,14 +13,14 @@ html
 
 			section
 				h1 RobotC basics
-				h2 Written and presented by AJ, Halloween 2014
+				h3 Written Halloween 2014, presented on November 1
 
 			section
 				h1 Programming fundamentals
 
 			section
 				h2.bullet Basic program structure
-				h3.bullet RobotC programs are basically a sequence of statements that the computer (NXT) will run.
+				h3.bullet RobotC programs are basically a sequence of statements that the computer (NXT) will run. Whitespace doesn't matter.
 				h3.bullet The next statement doesn't start until the previous statement finishes, unless you explicitly say otherwise.
 				h3.bullet There are two types of statements: command statements, and flow control statements
 
@@ -33,16 +33,21 @@ html
 				h2.bullet Control flow statements
 				h3.bullet Control flow statements control the <em>flow</em> of the program (semi-obviously).
 				h3.bullet For example, the <code>if</code> statement controls whether or not a collection of statements run, based on a condition.
+				h3.bullet Control flow statements look like this: <code>statement (parameter) { action; action; action; }</code>
 				h3.bullet Let's just look at an example.
 
-			section
+			section(data-bespoke-backdrop='emphatic')
 				pre
 					code.
+						// declare (initialize) a variable
 						bool continue = true;
-						
+						&nbsp;
 						while (continue)
 						{
-							// this is a contrived example. usually you would just put `someVariable <= 5` in the while loop.
+							/*
+								this is a contrived example. usually you would
+								just put `someVariable <= 5` in the while loop.
+							*/
 							if (someVariable <= 5)
 							{
 								continue = false;
