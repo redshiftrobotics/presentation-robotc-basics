@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>RobotC basics</title>
+    <link rel="stylesheet" type="text/css" href="build/build.css">
+  </head>
+  <body>
+    <article class="language-clike">
+      <section>
+        <h1>RobotC basics</h1>
+        <h3>Written Halloween 2014, presented on November 1</h3>
+      </section>
+      <section>
+        <h1>Programming fundamentals</h1>
+      </section>
+      <section>
+        <h2 class="bullet">Basic program structure</h2>
+        <h3 class="bullet">RobotC programs are basically a sequence of statements that the computer (NXT) will run. Whitespace doesn't matter.</h3>
+        <h3 class="bullet">The next statement doesn't start until the previous statement finishes, unless you explicitly say otherwise.</h3>
+        <h3 class="bullet">There are two types of statements: command statements, and flow control statements</h3>
+      </section>
+      <section>
+        <h2 class="bullet">Command statements</h2>
+        <h3 class="bullet">Command statements are basically <em>actions</em>. They <em>do</em> something, like initializing a variable or moving a motor.</h3>
+        <h3 class="bullet">Command statements are terminated by <code>;</code>s.</h3>
+      </section>
+      <section>
+        <h2 class="bullet">Control flow statements</h2>
+        <h3 class="bullet">Control flow statements control the <em>flow</em> of the program (semi-obviously).</h3>
+        <h3 class="bullet">For example, the <code>if</code> statement controls whether or not a collection of statements run, based on a condition.</h3>
+        <h3 class="bullet">Control flow statements look like this: <code>statement (parameter) { action; action; action; }</code></h3>
+        <h3 class="bullet">Let's just look at an example.</h3>
+      </section>
+      <section data-bespoke-backdrop="emphatic">
+        <pre><code>// declare (initialize) a variable
+bool continue = true;
+&nbsp;
+while (continue)
+{
+ /*
+  this is a contrived example. usually you would
+  just put `someVariable <= 5` in the while loop.
+ */
+ if (someVariable <= 5)
+ {
+  continue = false;
+ }
+}
+</code></pre>
+      </section>
+      <section>
+        <h2 class="bullet">Common control flow statements</h2>
+        <h3 class="bullet"><code>if (condition) {}</code></h3>
+        <h3 class="bullet"><code>while (condition) {}</code></h3>
+        <h3 class="bullet"><code>for (initialCommand; condition; endCommand) {}</code></h3>
+      </section>
+      <section>
+        <h1>Ancillary concepts</h1>
+      </section>
+      <section>
+        <h2 class="bullet">Application code</h2>
+        <h3 class="bullet">This is a fancy term for situation-specific code.</h3>
+        <h3 class="bullet">Application code is code that contains the logic specific to whatever problem you're trying to solve.</h3>
+        <h3 class="bullet">For example, a robot's teliop, or a particular autonomous routine.</h3>
+      </section>
+      <section>
+        <h2 class="bullet">Libraries</h2>
+        <h3 class="bullet">A library is a unit of code that's designed to be reused.</h3>
+        <h3 class="bullet">Libraries cannot be compiled on their own, instead, application programs use them</h3>
+        <h3 class="bullet">Libraries are good because they reduce code duplication, which means less work for everyone</h3>
+      </section>
+      <section>
+        <h2 class="bullet">APIs</h2>
+        <h3 class="bullet">An API, or Application Programming Interface, is a collection of command statements that works with a certain topic</h3>
+        <h3 class="bullet">For example: "the motors API"</h3>
+        <h3 class="bullet">If you want to seriously program with RobotC you will want to use the <a href="https://github.com/saasrobotics/Libraries">APIs that we have written</a></h3>
+        <h3 class="bullet">If you just want to move a prototype's motors, you'll want to use the RobotC APIs. See <a href="http://www.robotc.net/wiki/NXT_Motors_and_Servos_Overview">motors and servos</a> on the RobotC wiki</h3>
+      </section>
+      <section>
+        <h2 class="bullet">Things I haven't covered</h2>
+        <h3 class="bullet">Functions</h3>
+        <h3 class="bullet">Variable types</h3>
+        <h3 class="bullet">Conditionals</h3>
+        <h3 class="bullet"><code>#includes</code></h3>
+        <h3 class="bullet"><code>switch</code> statements</h3>
+        <h3 class="bullet">I don't want to take up too much time with these, but if they interest you, talk to me! I'll teach you about them.</h3>
+      </section>
+    </article>
+    <script src="build/build.js"></script>
+  </body>
+</html>
